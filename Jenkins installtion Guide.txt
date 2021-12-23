@@ -1,0 +1,129 @@
+GIT :
+
+gashinde
+Phaltan@11
+
+Docker Hub
+
+alshinde77@gmail.com
+Sidd@11ck7455
+
+
+AWS:
+
+alshinde77@gmail
+Sidd@11ck7455
+
+EC2 Jenkins:
+
+admin
+Sidd@11ck7455
+
+
+
+
+https://github.com/ravdy/DevOps/blob/master/jenkins/jenkins_installation.md
+
+Install Jenkins on AWS EC2
+
+Prerequisites
+-EC2 Instance
+	-With Internet Access
+	-Security Group with Port 8080 open for internet
+	Java 11 should be installed
+	Install Jenkins
+
+JDK installation: 
+sudo amazon-linux-extras install java-openjdk11
+sudo yum install java-11-openjdk-devel
+
+multiple java versions then execute below command and 
+then select one of them and set as default jdk for execution
+
+sudo update-alternatives --config java
+
+find the jaav path in linux ec2 :
+
+file /etc/alternatives/java
+
+
+
+Git Install on EC2
+
+sudo yum install git -y
+
+
+Maven install on EC2
+
+sudo yum install maven -y
+
+Jenkin installation: 
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+
+
+
+
+
+
+Amazon Linux 2:
+
+Install the EPEL release package for RHEL 7 and enable the EPEL repository.
+
+sudo amazon-linux-extras install epel -y
+
+Amazon Linux Amazon Machine Image (AMI):
+
+The EPEL repository is already installed on the original version of Amazon Linux, but you must enable it. You can enable this repository either by using the yum-config-manager command or by editing the epel.repo file.
+
+sudo yum-config-manager --enable epel
+
+sudo yum install jenkins
+
+sudo service jenkins status
+
+sudo service jenkins start
+
+sudo chkconfig jenkins on
+
+
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+		   
+0c9a716f5e4549adb8d8042e57b40ce5
+
+Accessing Jenkins:
+
+http://YOUR-SERVER-PUBLIC-IP:8080
+
+enter the initialAdminPassword : 
+
+select option install suggested plugins
+
+post plugins installation 
+
+enter admin user details 
+name and password credentials next 
+
+
+sudo service jenkins stop
+
+
+
+==============================
+Docker
+==============================
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
+sudo yum update -y
+
+sudo amazon-linux-extras install docker
+
+sudo yum install docker
+
+
+deploy spring boot application using jenkins on AWS EC2 
+https://www.youtube.com/watch?v=yO7Vh7N2me8
+https://quick-adviser.com/how-do-you-deploy-spring-boot-application-in-aws-ec2-using-jenkins/#How_do_you_deploy_spring_boot_application_in_AWS_EC2_using_Jenkins
